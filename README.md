@@ -1,2 +1,2 @@
 # machine-learning-exercise
-Exercises of the Machine Learning course by Stanford University
+Exercises of the Machine Learning course by Stanford University on Coursera
