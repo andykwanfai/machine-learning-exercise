@@ -84,16 +84,23 @@ J = J + lambda/(2*m) * (sum(Theta1(:,2:end)(:).^2)+sum(Theta2(:,2:end)(:).^2));
 
 % Part 2 Backpropagation
 
+d3 = a3 - y_matrix;
 
+d2 = d3 * Theta2(:,2:end) .* sigmoidGradient(z2);
 
+Delta1 = d2' * a1;
 
+Delta2 = d3' * a2;
 
+Theta1_grad = Delta1 / m;
 
+Theta2_grad = Delta2 / m;
 
+% Part 3 regularization
 
+Theta1_grad(:,2:end) = Theta1_grad(:,2:end) + lambda / m * Theta1(:,2:end);
 
-
-
+Theta2_grad(:,2:end) = Theta2_grad(:,2:end) + lambda / m * Theta2(:,2:end);
 
 % -------------------------------------------------------------
 
